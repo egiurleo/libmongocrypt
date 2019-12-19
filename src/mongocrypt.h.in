@@ -666,9 +666,6 @@ mongocrypt_ctx_explicit_encrypt_init (mongocrypt_ctx_t *ctx,
 /**
  * Initialize a context for decryption.
  *
- * This method expects the passed-in BSON to be of the form:
- * { "v" : BSON value to encrypt }
- *
  * @param[in] ctx The @ref mongocrypt_ctx_t object.
  * @param[in] doc The document to be decrypted. The viewed data is copied. It is
  * valid to destroy @p doc with @ref mongocrypt_binary_destroy immediately
@@ -683,7 +680,6 @@ mongocrypt_ctx_decrypt_init (mongocrypt_ctx_t *ctx, mongocrypt_binary_t *doc);
 
 /**
  * Explicit helper method to decrypt a single BSON object.
- *
  *
  * @param[in] ctx A @ref mongocrypt_ctx_t.
  * @param[in] msg A @ref mongocrypt_binary_t the encrypted BSON. The viewed data
